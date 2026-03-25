@@ -12,19 +12,19 @@ TBA
 
 TBA
 
-### Identify health station closures, openings and relocations from the health station data
+### 1) Identify health station closures, openings and relocations from the health station data
 
 **Script**: TBA
 
-**Based on**: Dataset of all health stations in Finland in 2013--2019 (DOI will be added)
+**Based on**: Dataset of all health stations in Finland in 2013–2019 (DOI will be added)
 
-### Draw a map of Finland with health station closures and population densities
+### 2) Draw a map of Finland with health station closures and population densities
 
 **Script**: TBA
 
 **Based on**: Spatial data from [Statistics Finland](https://stat.fi/en/services/statistical-data-services/geographic-data), health station closures from the previous step, and health station coordinates from [OpenStreetMap](https://www.openstreetmap.org/).
 
-### Visualise Finnish healthcare system structure and patient pathways with a process chart
+### 3) Visualise Finnish healthcare system structure and patient pathways with a process chart
 
 **Script**: TBA
 
