@@ -32,7 +32,7 @@ TBA
 
 ## Replication
 
-TBA testi
+TBA
 
 ## To do list
 
