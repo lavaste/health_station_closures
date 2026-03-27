@@ -1,0 +1,62 @@
+---
+title: "The Effecs of Primary Care Clinic Closures: How Older People's Geographical Distance to Care Affects Their Health and Service Use?"
+author: xx
+format: gmf
+editor: visual
+---
+
+# The effecs of primary care clinic closures: How older people's geographical distance to care affects their health and service use?
+
+xxx
+
+## Setup
+
+```{r}
+#| label: preliminaries
+#| echo: true
+#| output: false
+
+# Load 'here' package for relative file paths
+  library(here)
+
+# Run setup script
+  source(here::here("scripts", "setup.R"), echo = FALSE)
+```
+
+## Identifying closed stations
+
+How closed clinics are identified:
+
+```{r}
+1 + 1
+```
+
+TBA
+
+## Maps
+
+Drawing map of closed cliinics with population density here:
+
+```{r}
+2 * 2
+```
+
+Draw map of the new clinics here:
+
+```{r}
+
+```
+
+Draw map of all clinics:
+
+```{r}
+
+```
+
+## Municipality level descriptive statistics
+
+Descriptive statistics using Sotkanet data here.
+
+```{r}
+
+```
