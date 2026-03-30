@@ -215,7 +215,7 @@ mun_category <- mun_category %>%
 #Merge
 exits <- left_join(exits, mun_category, by="municipality")
 
-rm(mun_category, temp4)
+rm(mun_category)
 
 # Fix values
 exits <- exits %>% 
