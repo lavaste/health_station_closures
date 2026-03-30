@@ -1,11 +1,11 @@
 ---
-title: "The Effecs of Primary Care Clinic Closures: How Older People's Geographical Distance to Care Affects Their Health and Service Use?"
+title: "The Effects of Primary Care Clinic Closures: How Older People's Geographical Distance to Care Affects Their Health and Service Use?"
 author: xx
 format: gmf
 editor: visual
 ---
 
-# The effecs of primary care clinic closures: How older people's geographical distance to care affects their health and service use?
+# The effects of primary care clinic closures: How older people's geographical distance to care affects their health and service use?
 
 xxx
 
@@ -25,32 +25,58 @@ xxx
 
 ## Identifying closed stations
 
-How closed clinics are identified:
+Running data to identify health station closures and new station entries
 
 ```{r}
-1 + 1
-```
+#| label: coordinates
+#| echo: true
+#| message: false
+#| warning: false
+#| output: true
+#| results: false
 
-TBA
+# Run script
+  source(here::here("scripts", "identifying_closed_clinics.R"), echo = FALSE)
+
+```
 
 ## Maps
 
-Drawing map of closed cliinics with population density here:
+Drawing map of closed clinics with population density:
 
 ```{r}
-2 * 2
+#| label: map
+#| echo: true
+#| message: false
+#| warning: false
+#| output: true
+#| results: false
+#| fig-width: 6
+#| fig-height: 8
+#| fig-align: center
+
+
+# Running script to draw the maps
+  source(here::here("scripts", "map_closures.R"), echo = FALSE)
+
 ```
 
-Draw map of the new clinics here:
+Drawing map with all stations: all closed stations marked with yellow squares. All new clinics marked with purple square.
 
 ```{r}
+#| label: map
+#| echo: true
+#| message: false
+#| warning: false
+#| output: true
+#| results: false
+#| fig-width: 6
+#| fig-height: 8
+#| fig-align: center
 
-```
 
-Draw map of all clinics:
-
-```{r}
-
+# Running script to draw the maps
+  source(here::here("scripts", "map_all_coordinates.R"), echo = FALSE)
 ```
 
 ## Municipality level descriptive statistics

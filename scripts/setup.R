@@ -4,6 +4,7 @@
 #----------------------------------------------------------
 
 
+
 # Clear all
 rm(list=ls())
 
@@ -38,6 +39,10 @@ rm(list=ls())
   library(foreign)
 # Map themes
   library(ggthemes)
+# Color palettes
+  library(viridis)
+  library(RColorBrewer)
+  library(dichromat)
 # Data cleaning
   library(janitor)
 # Data tables
@@ -46,7 +51,6 @@ rm(list=ls())
   library(tibble)
   library(smd)
   library(stargazer)    
-
 
 # Set seed
 set.seed(12345)

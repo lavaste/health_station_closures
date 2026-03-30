@@ -1,6 +1,7 @@
 
 #####################################
 
+# Data in exits_coordinates, entries_coordinates and all_coordinates
 
 #----------------------------------------------------------
 # GET POPULATION DENSITY
@@ -31,14 +32,16 @@ px_data <- px_data %>%
   subset(posti_alue!="WHOLE") %>%
   select(-postal_code_area,-year)
 
+
 # Join
-areas2 <- left_join(areas,px_data,by="posti_alue")
+areas2 <- left_join(areas_zip,px_data,by="posti_alue")
 
 # Fix scale
 areas2$tiheys <- areas2$inhabitants_total_he/(areas2$pinta_ala/1000000)
-areas2$tiheys <- ifelse(areas2$tiheys>100,100,areas2$tiheys)
+areas2$tiheys <- ifelse(areas2$tiheys>30,30,areas2$tiheys)
 
 
+rm(px_raw, pxweb_query_list)
 
 #####################################
 
@@ -49,17 +52,11 @@ areas2$tiheys <- ifelse(areas2$tiheys>100,100,areas2$tiheys)
 
 # Health station exits
 
-pdf("kartat/kuvat/exits_updated.pdf")
-p <- ggplot(data=areas2) + 
+exits_graph <- ggplot(data=areas2) + 
   geom_sf(aes(fill=tiheys),color="transparent") + 
-  #geom_sf(fill="transparent",color="transparent",size=1,linewidth=.8, data=. %>% group_by(all) %>% summarise()) + 
-  geom_point(data=exit_2013, aes(y=northing, x=easting), size=3, fill = "red", color="black", stroke=0.5, shape=22) +
-  geom_point(data=exit_2014, aes(y=northing, x=easting), size=3, fill = "red", color="black", stroke=0.5, shape=22) +
-  geom_point(data=exit_2015, aes(y=northing, x=easting), size=3, fill = "red", color="black", stroke=0.5, shape=22) +
-  geom_point(data=exit_2016, aes(y=northing, x=easting), size=3, fill = "red", color="black", stroke=0.5, shape=22) +
-  geom_point(data=exit_2017, aes(y=northing, x=easting), size=3, fill = "red", color="black", stroke=0.5, shape=22) +
-  geom_point(data=exit_2018, aes(y=northing, x=easting), size=3, fill = "red", color="black", stroke=0.5, shape=22)
-p + theme_map() +
+  geom_point(data=exits, aes(y=northing, x=easting), size=2.5, color="red", stroke=0.75, shape=22) +
+  
+  theme_map() +
   theme(
     axis.line=element_blank(),
     axis.text.x=element_blank(),
@@ -69,15 +66,15 @@ p + theme_map() +
     axis.title.x=element_blank(),
     axis.title.y=element_blank(),
     plot.background=element_blank(),
-    plot.tag.position=c(0,1),
-    legend.position = "right",
-    legend.justification = "center"
-  ) +
-  scale_fill_viridis(name = "Population/km²", option = "mako", direction=-1)
-dev.off()
+    plot.tag.position=c(0,1), legend.position = "right", legend.justification = "center") +
+  scale_fill_distiller(name = "Population/km²", palette = "PuBu", direction= 1)
+
+print(exits_graph)
+# Save the graph
+ggsave(here::here("output", tag, "exits_graph.pdf"), exits_graph, width = 110, height = 130, units = "mm", device="pdf", dpi=300)
 
 
+####################################################
 
-#####################################
 
 
