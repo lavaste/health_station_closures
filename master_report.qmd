@@ -7,14 +7,14 @@ editor: visual
 
 # The effects of primary care clinic closures: How older people's geographical distance to care affects their health and service use?
 
-xxx
-
 ## Setup
 
 ```{r}
 #| label: preliminaries
 #| echo: true
 #| output: false
+#| message: false
+#| warning: false
 
 # Load 'here' package for relative file paths
   library(here)
@@ -61,7 +61,7 @@ Drawing map of closed clinics with population density:
 
 ```
 
-Drawing map with all stations: all closed stations marked with yellow squares. All new clinics marked with purple square.
+Drawing map with all stations: all closed stations marked with yellow squares. All new clinics marked with purple squares.
 
 ```{r}
 #| label: map
