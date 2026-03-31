@@ -12,10 +12,11 @@ health_station_closures/
 │   ├── setup.R
 │   ├── identifying_closed_stations.R
 │   ├── map_closures.R
-│   └── map_all_stations.R
+│   ├── map_all_stations.R
+│   └── mun_level_summary_table.R
 ├── data/
-|   ├── raw
-|       └── health_stations_Finland.xlsx
+│   ├── raw
+│      └── health_stations_Finland.xlsx
 │   ├── final
 │       └── timestamped folders
 ├── output/
