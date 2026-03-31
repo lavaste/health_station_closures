@@ -1,7 +1,7 @@
 ---
 title: "The Effects of Primary Care Clinic Closures: How Older People's Geographical Distance to Care Affects Their Health and Service Use?"
-author: xx
-format: gmf
+author: --
+format: gfm
 editor: visual
 ---
 
@@ -32,11 +32,11 @@ Running data to identify health station closures and new station entries
 #| echo: true
 #| message: false
 #| warning: false
-#| output: true
+#| output: false
 #| results: false
 
 # Run script
-  source(here::here("scripts", "identifying_closed_clinics.R"), echo = FALSE)
+  source(here::here("scripts", "identifying_closed_stations.R"), echo = FALSE)
 
 ```
 
@@ -64,7 +64,7 @@ Drawing map of closed clinics with population density:
 Drawing map with all stations: all closed stations marked with yellow squares. All new clinics marked with purple squares.
 
 ```{r}
-#| label: map
+#| label: map2
 #| echo: true
 #| message: false
 #| warning: false
@@ -76,13 +76,23 @@ Drawing map with all stations: all closed stations marked with yellow squares. A
 
 
 # Running script to draw the maps
-  source(here::here("scripts", "map_all_coordinates.R"), echo = FALSE)
+  source(here::here("scripts", "map_all_clinics.R"), echo = FALSE)
 ```
 
 ## Municipality level descriptive statistics
 
-Descriptive statistics using Sotkanet data here.
+Descriptive statistics at municipality level. Treatment (\>1 closure in municipality) and control (no closures) group mean, standard deviation, and relative difference.
+
+Source: Thl (<https://sotkanet.fi/sotkanet/fi/index>)
 
 ```{r}
+#| label: map2
+#| echo: true
+#| message: false
+#| warning: false
+#| output: true
+#| results: false
 
+# Running script to make table
+  source(here::here("scripts", "mun_level_summary_table.R"), echo = FALSE)
 ```
