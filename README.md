@@ -6,7 +6,28 @@
 
 ## Repository structure
 
-TBA
+```
+health_station_closures/
+├── scripts/
+│   ├── setup.R
+│   ├── identifying_closed_stations.R
+│   ├── map_closures.R
+│   └── map_all_stations.R
+├── data/
+|   ├── raw
+|       └── health_stations_Finland.xlsx
+│   ├── final
+│       └── timestamped folders
+├── output/
+│   └── timestamped folders
+├── README.md
+├── health_station_closures.Rproj
+├── .here
+├── LICENCE
+├── master_report.qmd
+├── master_report.md
+└── .gitignore
+```
 
 ## Output
 
@@ -14,13 +35,13 @@ TBA
 
 ### 1) Identify health station closures, openings and relocations from the health station data
 
-**Script**: TBA
+**Script**: identifying_closed_stations.R
 
 **Based on**: Dataset of all health stations in Finland in 2013–2019 (DOI will be added)
 
 ### 2) Draw a map of Finland with health station closures and population densities
 
-**Script**: TBA
+**Script**: map_closures.R
 
 **Based on**: Spatial data from [Statistics Finland](https://stat.fi/en/services/statistical-data-services/geographic-data), health station closures from the previous step, and health station coordinates from [OpenStreetMap](https://www.openstreetmap.org/).
 
