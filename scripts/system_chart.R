@@ -7,6 +7,7 @@
 
 library(DiagrammeR)
 
+pdf(here::here("output", tag, "system_graph.pdf"))
 
 system_chart <- grViz("
 digraph patient_pathway {
@@ -194,9 +195,8 @@ digraph patient_pathway {
   
   }")
 
+dev.off()
 
-svg <- DiagrammeRsvg::export_svg(system_chart)
-rsvg::rsvg_png(charToRaw(svg), file = here::here("output", tag, "system_graph.png"))
-
+print(system_chart)
 
 # Aiempi väri occupational care #6A4BBD

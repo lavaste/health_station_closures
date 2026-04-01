@@ -108,11 +108,11 @@ The system chart visualizing the patient pathways, structure and distribution of
 
 ```{r}
 #| label: system_graph
-#| echo: true
+#| echo: false
 #| message: false
 #| warning: false
 #| output: true
-#| results: true
+#| results: false
 
 source(here::here("scripts", "system_chart.R"), echo = FALSE)
 
