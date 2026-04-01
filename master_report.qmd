@@ -116,4 +116,9 @@ The system chart visualizing the patient pathways, structure and distribution of
 
 source(here::here("scripts", "system_chart.R"), echo = FALSE)
 
+# Include chart as static image
+knitr::include_graphics(here::here("output", tag, "system_graph.png"))
+
+
+
 ```

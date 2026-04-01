@@ -6,8 +6,9 @@
 # Uses DiagrammeR (Graphviz DOT engine)
 
 library(DiagrammeR)
-
-pdf(here::here("output", tag, "system_graph.pdf"))
+library(DiagrammeRsvg)
+library(magrittr)
+library(rsvg)
 
 system_chart <- grViz("
 digraph patient_pathway {
@@ -195,8 +196,19 @@ digraph patient_pathway {
   
   }")
 
-dev.off()
+# Save as pdf
+system_chart %>%
+  export_svg %>% charToRaw %>% rsvg_pdf(file = here::here("output", tag, "system_graph.pdf"))
 
-print(system_chart)
+# Save as png
+system_chart %>%
+  export_svg() %>%
+  charToRaw() %>%
+  rsvg_png(file = here::here("output", tag, "system_graph.png"), 
+           width = 2000)   # higher width = better resolution
+
+# Include it as a static image — works in HTML, PDF, and .md
+knitr::include_graphics(here::here("output", tag, "system_graph.png"))
+
 
 # Aiempi väri occupational care #6A4BBD
