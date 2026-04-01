@@ -48,9 +48,15 @@ TBA
 
 ### 3) Visualise Finnish healthcare system structure and patient pathways with a process chart
 
-**Script**: TBA
+**Script**: system_chart.R
 
 **Based on**: TBA
+
+### 4) Create a table of municipality level descriptive characteristics
+
+**Script**: mun_level_summary_table.R
+
+**Based on**: Indicator data from [THL](https://sotkanet.fi/sotkanet/fi/index).
 
 ## Replication
 

@@ -1,6 +1,6 @@
 # The Effects of Primary Care Clinic Closures: How Older People’s
 Geographical Distance to Care Affects Their Health and Service Use?
-xx
+–
 
 # The effects of primary care clinic closures: How older people’s geographical distance to care affects their health and service use?
 
@@ -16,43 +16,25 @@ xx
 
 ## Identifying closed stations
 
-Running data to identify health station closures and new station entries
+Running data to identify health station closures and new station
+entries. The data is collected from public sources using Internet
+Archive WayBack Machine (DOI will be added).
 
 ``` r
 # Run script
   source(here::here("scripts", "identifying_closed_stations.R"), echo = FALSE)
 ```
 
-    Passing 77 addresses to the Nominatim single address geocoder
-
-    Query completed in: 77.4 seconds
-
-    Warning in CPL_crs_from_input(x): GDAL Message 1: +init=epsg:XXXX syntax is
-    deprecated. It might return a CRS with a non-EPSG compliant axis order.
-
-    Requesting response from: http://geo.stat.fi/geoserver/wfs?service=WFS&version=1.0.0&request=getFeature&typename=tilastointialueet%3Akunta1000k_2013
-
-    Warning: Coercing CRS to epsg:3067 (ETRS89 / TM35FIN)
-
-    Data is licensed under: Attribution 4.0 International (CC BY 4.0)
-
-    Requesting response from: http://geo.stat.fi/geoserver/wfs?service=WFS&version=1.0.0&request=getFeature&typename=postialue%3Apno_2019
-
-    Warning: Coercing CRS to epsg:3067 (ETRS89 / TM35FIN)
-
-    Data is licensed under: Attribution 4.0 International (CC BY 4.0)
-
-    Passing 661 addresses to the Nominatim single address geocoder
-
-    Query completed in: 875.7 seconds
-
-    Passing 5 addresses to the Nominatim single address geocoder
-
-    Query completed in: 5 seconds
-
 ## Maps
 
-Drawing map of closed clinics with population density:
+Drawing a map of closed clinics with population density.
+
+Closed health stations are marked with red squares. Population density
+is calculated by dividing the population of the postal code area by the
+area of the postal code region (km2). To improve map readability,
+population density values are truncated at 100 people per square
+kilometre—all areas exceeding this threshold are capped at 100,
+regardless of their actual density.
 
 ``` r
 # Running script to draw the maps
@@ -62,12 +44,16 @@ Drawing map of closed clinics with population density:
 <img src="master_report_files/figure-commonmark/map-1.png"
 data-fig-align="center" />
 
-Drawing map with all stations: all closed stations marked with yellow
-squares. All new clinics marked with purple squares.
+Drawing map of stations closed and opened during the study period
+relative to other stations that did not close.
+
+All closed stations are marked with yellow squares, new clinics marked
+with purple squares, and others that remain (mostly) in the same
+location are marked with green squares.
 
 ``` r
 # Running script to draw the maps
-  source(here::here("scripts", "map_all_coordinates.R"), echo = FALSE)
+  source(here::here("scripts", "map_all_stations.R"), echo = FALSE)
 ```
 
 <img src="master_report_files/figure-commonmark/map2-1.png"
@@ -78,4 +64,27 @@ data-fig-align="center" />
 
 ## Municipality level descriptive statistics
 
-Descriptive statistics using Sotkanet data here.
+Descriptive statistics at municipality level. Treatment (\>1 closure in
+municipality) and control (no closures) group mean, standard deviation,
+and relative difference.
+
+Source: THL (<https://sotkanet.fi/sotkanet/fi/index>)
+
+``` r
+# Running script to make table
+  source(here::here("scripts", "mun_level_summary_table.R"), echo = FALSE)
+```
+
+## Finnish healthcare system chart: patient pathways
+
+The system chart visualizing the patient pathways, structure and
+distribution of visits among the elderly population. Primary care is
+provided independently by nurses, GPs, and specialists. Specialised care
+is typically provided by specialists assisted by nurses. Shares of the
+service use of different subsystems among people aged over 64 years are
+from THL (2025):
+<https://sampo.thl.fi/pivot/prod/fi/hilmokokonaisuus/kuutio01/fact_hilmokok_kuutio01?row=palvelu-49937&row=palvelusektori-918725&column=ikaluokka-109987&filter=measure-87578&filter=aika-660839>.
+
+``` r
+source(here::here("scripts", "system_chart.R"), echo = FALSE)
+```

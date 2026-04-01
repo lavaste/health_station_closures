@@ -71,7 +71,7 @@ data_sotkanet <- data_sotkanet %>%
 
 #Number of stations in municipality
 
-stations_2013 <- read_excel("original_data/health_stations_Finland_13-19.xlsx",
+stations_2013 <- read_excel("data/raw/health_stations_Finland_13-19.xlsx",
                             "2013",col_names =TRUE,na="",range = cell_cols("A:V"))
 
 #Count stations in municipality in 2013

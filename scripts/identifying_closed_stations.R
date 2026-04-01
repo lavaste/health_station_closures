@@ -8,13 +8,13 @@
 #----------------------------------------------------------
 
 #Import the data from excel
-stations_2013 <- read_excel("original_data/health_stations_Finland_13-19.xlsx","2013",col_names =TRUE,na="",range = cell_cols("A:V"))
-stations_2014 <- read_excel("original_data/health_stations_Finland_13-19.xlsx","2014",col_names =TRUE,na="",range = cell_cols("A:V"))
-stations_2015 <- read_excel("original_data/health_stations_Finland_13-19.xlsx","2015",col_names =TRUE,na="",range = cell_cols("A:V"))
-stations_2016 <- read_excel("original_data/health_stations_Finland_13-19.xlsx","2016",col_names =TRUE,na="",range = cell_cols("A:V"))
-stations_2017 <- read_excel("original_data/health_stations_Finland_13-19.xlsx","2017",col_names =TRUE,na="",range = cell_cols("A:V"))
-stations_2018 <- read_excel("original_data/health_stations_Finland_13-19.xlsx","2018",col_names =TRUE,na="",range = cell_cols("A:V"))
-stations_2019 <- read_excel("original_data/health_stations_Finland_13-19.xlsx","2019",col_names =TRUE,na="",range = cell_cols("A:V"))
+stations_2013 <- read_excel("data/raw/health_stations_Finland_13-19.xlsx","2013",col_names =TRUE,na="",range = cell_cols("A:V"))
+stations_2014 <- read_excel("data/raw/health_stations_Finland_13-19.xlsx","2014",col_names =TRUE,na="",range = cell_cols("A:V"))
+stations_2015 <- read_excel("data/raw/health_stations_Finland_13-19.xlsx","2015",col_names =TRUE,na="",range = cell_cols("A:V"))
+stations_2016 <- read_excel("data/raw/health_stations_Finland_13-19.xlsx","2016",col_names =TRUE,na="",range = cell_cols("A:V"))
+stations_2017 <- read_excel("data/raw/health_stations_Finland_13-19.xlsx","2017",col_names =TRUE,na="",range = cell_cols("A:V"))
+stations_2018 <- read_excel("data/raw/health_stations_Finland_13-19.xlsx","2018",col_names =TRUE,na="",range = cell_cols("A:V"))
+stations_2019 <- read_excel("data/raw/health_stations_Finland_13-19.xlsx","2019",col_names =TRUE,na="",range = cell_cols("A:V"))
 
 #Select rows
 stations_2013 <- select(stations_2013,station,address,postcode,municipality,municipality_num,outsourced)
@@ -224,13 +224,13 @@ exits <- exits %>%
   select(-kuntaryhmitys_code)
 
 # Save data
-save(exits, file = here::here("data", tag, "exits_coordinates.RData"))
+save(exits, file = here::here("data/final", tag, "exits_coordinates.RData"))
 
 # Entries data
 entries <- subset(temp4, entry==1)
 
 # Save
-save(entries, file = here::here("data", tag, "entries_coordinates.RData"))
+save(entries, file = here::here("data/final", tag, "entries_coordinates.RData"))
 
 
 #----------------------------------------------------------
@@ -315,7 +315,7 @@ rm(addresses, temp5)
 other_stations <- subset(all_coordinates, !(station %in% exits$station | station %in% entries$station))
 
 # Save
-save(other_stations, file = here::here("data", tag, "other_station_coordinates.Rdata"))
+save(other_stations, file = here::here("data/final", tag, "other_station_coordinates.Rdata"))
 
 
 

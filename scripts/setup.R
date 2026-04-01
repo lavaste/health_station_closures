@@ -60,7 +60,7 @@ tag <- paste0(format(Sys.Date(), "%Y-%m-%d"), "-", Sys.info()[["user"]])
 
 # Create folders
 # Data
-dir.create(here::here("data", tag), recursive = TRUE, showWarnings = FALSE)
+dir.create(here::here("data/final", tag), recursive = TRUE, showWarnings = FALSE)
 # Output
 dir.create(here::here("output", tag), recursive = TRUE, showWarnings = FALSE)
 
