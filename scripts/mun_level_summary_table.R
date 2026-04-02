@@ -39,13 +39,13 @@ data_sotkanet <- data_sotkanet %>%
 #  list("Kunta"=c("*"),
 #       "Asuntokunnat"=c("SSS"),
 #       "Tiedot"=c("kturaha_summa", "asuntokunta_lkm"),
-#       "Vuosi"=c("2013", "2019"))
+ #      "Vuosi"=c("2013", "2019"))
 
 # Get
 # Tässä jostain syystä joku ongelma, ei läydy tk sivuilta
 #px_raw_income <- 
 #  pxweb_get(url = "https://pxdata.stat.fi:443/PxWeb/api/v1/fi/StatFin/velk/statfin_velk_pxt_13kw.px",
-#            query = pxweb_query_income)
+#           query = pxweb_query_income)
 
 # Clean
 #px_data_income <- as_tibble(
@@ -85,7 +85,7 @@ rm(num_stations)
 
 #---------------------------------------------------------------
 # Summary statistics
-# Keskiarvot, hajonnat, erotus ja smd 
+# Mean, sd, and smd 
 # Ei ole nyt lisätty tk lukuja mukaan koska ei toiminut!
 
 #---------------------------------------
@@ -234,6 +234,7 @@ table.fin <- balance_table[, .(variable.fi, mean.treat, sd.treat, mean.control,
 stargazer::stargazer(
   table.ena, out = paste0(file = here::here("output", tag, "mun_level_summary_table.tex")),
   type='text', summary=FALSE, rownames = F, header = F)
+
 
 
 #stargazer::stargazer(

@@ -1,6 +1,6 @@
 ---
 title: "The Effects of Primary Care Clinic Closures: How Older People's Geographical Distance to Care Affects Their Health and Service Use?"
-author: --
+author: Tuukka Holster, Mika Kortelainen, Marja-Lisa Laukkonen, Konsta Lavaste, Kaisa Palo, Markku Satokangas, Tiina Hetemaa & Vuokko Heikinheimo
 format: gfm
 editor: visual
 ---
@@ -95,10 +95,10 @@ Source: THL (<https://sotkanet.fi/sotkanet/fi/index>)
 #| message: false
 #| warning: false
 #| output: true
-#| results: false
 
 # Running script to make table
   source(here::here("scripts", "mun_level_summary_table.R"), echo = FALSE)
+
 
 ```
 
@@ -111,13 +111,15 @@ The system chart visualizing the patient pathways, structure and distribution of
 #| echo: false
 #| message: false
 #| warning: false
-#| output: true
-#| results: false
 
-source(here::here("scripts", "system_chart.R"), echo = FALSE)
+# Create and save the graph
+source(here::here("scripts", "system_chart.R"), local = knitr::knit_global())
 
 # Include chart as static image
-knitr::include_graphics(here::here("output", tag, "system_graph.png"))
+knitr::include_graphics(
+  normalizePath(here::here("output", tag, "system_graph.png"), winslash = "/"))
+
+#knitr::include_graphics(here::here("output", tag, "system_graph.png"))
 
 
 

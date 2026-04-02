@@ -1,6 +1,7 @@
 # The Effects of Primary Care Clinic Closures: How Older People’s
 Geographical Distance to Care Affects Their Health and Service Use?
-–
+Tuukka Holster, Mika Kortelainen, Marja-Lisa Laukkonen, Konsta Lavaste,
+Kaisa Palo, Markku Satokangas, Tiina Hetemaa & Vuokko Heikinheimo
 
 # The effects of primary care clinic closures: How older people’s geographical distance to care affects their health and service use?
 
@@ -75,6 +76,23 @@ Source: THL (<https://sotkanet.fi/sotkanet/fi/index>)
   source(here::here("scripts", "mun_level_summary_table.R"), echo = FALSE)
 ```
 
+
+    ==================================================================================================
+    variable.ena                 mean.treat   sd.treat   mean.control sd.control  relative.diff  smd  
+    --------------------------------------------------------------------------------------------------
+    Health stations (N)            5.073      [4.508]       1.518       [1.248]      +234.2     +1.087
+    Population (ppl)             61942.510  [106074.660]  10904.970   [20778.730]    +468.0     +0.676
+    Population density (ppl/km2   184.366    [478.606]      40.410     [151.839]     +356.2     +0.410
+    Morbidity index               116.127     [18.562]     126.626     [26.174]       -8.3      -0.465
+    Aged > 64 (%)                  19.888     [4.054]       24.314      [5.568]       -18.2     -0.914
+    Tax revenue (€/capita)        3595.732   [476.429]     3185.438    [531.652]      +12.9     +0.818
+    Demographic dependency ratio   59.354     [7.858]       67.849      [7.907]       -12.5     -1.085
+    Unemployment rate (%)          10.829     [3.742]       10.809      [3.848]       +0.2      +0.005
+    At-risk-of-poverty rate (%)    12.807     [3.701]       14.443      [4.041]       -11.3     -0.425
+    Net migration                  -0.880     [5.223]       -4.446      [8.219]       -80.2     +0.520
+    Municipalities                   41                      267                                      
+    --------------------------------------------------------------------------------------------------
+
 ## Finnish healthcare system chart: patient pathways
 
 The system chart visualizing the patient pathways, structure and
@@ -82,9 +100,7 @@ distribution of visits among the elderly population. Primary care is
 provided independently by nurses, GPs, and specialists. Specialised care
 is typically provided by specialists assisted by nurses. Shares of the
 service use of different subsystems among people aged over 64 years are
-from THL (2025):
-<https://sampo.thl.fi/pivot/prod/fi/hilmokokonaisuus/kuutio01/fact_hilmokok_kuutio01?row=palvelu-49937&row=palvelusektori-918725&column=ikaluokka-109987&filter=measure-87578&filter=aika-660839>.
+from THL Sampo -datacubes
+([Sampo](https://sampo.thl.fi/pivot/prod/fi/hilmokokonaisuus/kuutio01/fact_hilmokok_kuutio01?row=palvelu-49937&row=palvelusektori-918725&column=ikaluokka-109987&filter=measure-87578&filter=aika-660839)).
 
-``` r
-source(here::here("scripts", "system_chart.R"), echo = FALSE)
-```
+![](output/2026-04-02-kaisapalo/system_graph.png)
