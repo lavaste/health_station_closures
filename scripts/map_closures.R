@@ -43,6 +43,10 @@ areas2$tiheys <- ifelse(areas2$tiheys>30,30,areas2$tiheys)
 
 rm(px_raw, pxweb_query_list)
 
+# Save for the interactive map 
+save(areas2, file = here::here("data/final", tag, "areas2.RData"))
+
+
 #####################################
 
 
@@ -69,7 +73,6 @@ exits_graph <- ggplot(data=areas2) +
     plot.tag.position=c(0,1), legend.position = "right", legend.justification = "center") +
   scale_fill_distiller(name = "Population/km²", palette = "PuBu", direction= 1)
 
-print(exits_graph)
 # Save the graph
 ggsave(here::here("output", tag, "exits_graph.pdf"), exits_graph, width = 110, height = 130, units = "mm", device="pdf", dpi=300)
 

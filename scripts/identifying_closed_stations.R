@@ -161,12 +161,12 @@ temp2$entry_2016 <- ifelse(temp2$min==2016 & temp2$entry==1,1,0)
 temp2$entry_2017 <- ifelse(temp2$min==2017 & temp2$entry==1,1,0)
 temp2$entry_2018 <- ifelse(temp2$min==2018 & temp2$entry==1,1,0)
 temp2$entry_2019 <- ifelse(temp2$min==2019 & temp2$entry==1,1,0)
-temp2$exit_2013 <- ifelse(temp2$max==2013 & temp2$exit==1,1,0)
-temp2$exit_2014 <- ifelse(temp2$max==2014 & temp2$exit==1,1,0)
-temp2$exit_2015 <- ifelse(temp2$max==2015 & temp2$exit==1,1,0)
-temp2$exit_2016 <- ifelse(temp2$max==2016 & temp2$exit==1,1,0)
-temp2$exit_2017 <- ifelse(temp2$max==2017 & temp2$exit==1,1,0)
-temp2$exit_2018 <- ifelse(temp2$max==2018 & temp2$exit==1,1,0)
+temp2$exit_2014 <- ifelse(temp2$max==2013 & temp2$exit==1,1,0)
+temp2$exit_2015 <- ifelse(temp2$max==2014 & temp2$exit==1,1,0)
+temp2$exit_2016 <- ifelse(temp2$max==2015 & temp2$exit==1,1,0)
+temp2$exit_2017 <- ifelse(temp2$max==2016 & temp2$exit==1,1,0)
+temp2$exit_2018 <- ifelse(temp2$max==2017 & temp2$exit==1,1,0)
+temp2$exit_2019 <- ifelse(temp2$max==2018 & temp2$exit==1,1,0)
 #All
 temp2$all <- 1
 
@@ -222,6 +222,10 @@ exits <- exits %>%
   mutate("Municipality_type" = fct_recode(as.factor(kuntaryhmitys_code),
                                           Urban = "1", Semiurban = "2", Rural = "3"))%>%
   select(-kuntaryhmitys_code)
+
+# Adding column indicating closure year 
+# Max year the last year station was in the data -> max + 1 identified as closure year
+exits$closure_year <- exits$max + 1
 
 # Save data
 save(exits, file = here::here("data/final", tag, "exits_coordinates.RData"))
@@ -316,6 +320,19 @@ other_stations <- subset(all_coordinates, !(station %in% exits$station | station
 
 # Save
 save(other_stations, file = here::here("data/final", tag, "other_station_coordinates.Rdata"))
+
+
+#-----------------------------------------------
+
+# PRINTING EXITS INTERACTIVE LIST IN QMD MASTER
+
+# Printing necessary info only: station name, municipality, and closure year
+exits_short <- select(exits, station, municipality, closure_year)
+
+
+
+
+
 
 
 

@@ -31,8 +31,6 @@ all_clinics_graph <- ggplot(data = areas_mun) +
     legend.position = "right",
     legend.justification = "center") 
 
-print(all_clinics_graph)
-
 # Save the graph
 ggsave(here::here("output", tag, "all_stations_graph.pdf"), all_clinics_graph, width = 110, height = 130, units = "mm", device="pdf", dpi=300)
 
@@ -69,8 +67,6 @@ new_stations_graph <- ggplot(data = areas_mun) +
     legend.position = "right",
     legend.justification = "center")
 
-
-print(new_stations_graph)
 
 # Save the graph
 ggsave(here::here("output", tag, "new_stations_graph.pdf"), new_stations_graph, width = 110, height = 130, units = "mm", device="pdf", dpi=300)

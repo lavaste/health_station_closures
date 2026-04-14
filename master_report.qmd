@@ -1,7 +1,8 @@
 ---
 title: "The Effects of Primary Care Clinic Closures: How Older People's Geographical Distance to Care Affects Their Health and Service Use?"
 author: Tuukka Holster, Mika Kortelainen, Marja-Lisa Laukkonen, Konsta Lavaste, Kaisa Palo, Markku Satokangas, Tiina Hetemaa & Vuokko Heikinheimo
-format: gfm
+format: html # test, change back to gfm if needed
+#server: shiny # possibility for interactive map 
 editor: visual
 ---
 
@@ -21,28 +22,32 @@ editor: visual
 
 # Run setup script
   source(here::here("scripts", "setup.R"), echo = FALSE)
+
 ```
 
 ## Identifying closed stations
 
 Running data to identify health station closures and new station entries. The data is collected from public sources using Internet Archive WayBack Machine (DOI will be added).
 
+Quatro documentation shows identified closures as a list with station name, municipality, and closure year. Closure year is defined as t if the station was in the data at t-1 but not in t.
+
 ```{r}
 #| label: coordinates
 #| echo: true
 #| message: false
 #| warning: false
-#| output: false
-#| results: false
 
 # Run script
   source(here::here("scripts", "identifying_closed_stations.R"), echo = FALSE)
 
+  DT::datatable(exits_short)
 ```
 
 ## Maps
 
-Drawing a map of closed clinics with population density.
+This section runs the codes that draw maps of health stations in Finland. The three maps include stations that i) closed ii) opened and iii) all stations are saved as pdf/png files to output-folder. An interactive map is then printed for the Quatro document.
+
+*Drawing a map of closed clinics with population density:*
 
 Closed health stations are marked with red squares. Population density is calculated by dividing the population of the postal code area by the area of the postal code region (km2). To improve map readability, population density values are truncated at 100 people per square kilometre---all areas exceeding this threshold are capped at 100, regardless of their actual density.
 
@@ -51,8 +56,6 @@ Closed health stations are marked with red squares. Population density is calcul
 #| echo: true
 #| message: false
 #| warning: false
-#| output: true
-#| results: false
 #| fig-width: 6
 #| fig-height: 8
 #| fig-align: center
@@ -60,10 +63,11 @@ Closed health stations are marked with red squares. Population density is calcul
 
 # Running script to draw the maps
   source(here::here("scripts", "map_closures.R"), echo = FALSE)
-
+  
+  exits_graph
 ```
 
-Drawing map of stations closed and opened during the study period relative to other stations that did not close.
+*Drawing map of stations closed and opened during the study period relative to other stations that did not close:*
 
 All closed stations are marked with yellow squares, new clinics marked with purple squares, and others that remain (mostly) in the same location are marked with green squares.
 
@@ -81,6 +85,47 @@ All closed stations are marked with yellow squares, new clinics marked with purp
 
 # Running script to draw the maps
   source(here::here("scripts", "map_all_stations.R"), echo = FALSE)
+
+```
+
+The pfd/png images of the maps are saved in output-folder.
+
+*Drawing interactive map for the GitHub documentation:*
+
+```{r}
+#| echo: false
+
+#checkboxInput(
+#  inputId = "show_fill",
+#  label = "Show population density background",
+#  value = TRUE
+#)
+```
+
+```{r}
+#| label: map_interactive
+#| echo: false
+
+#ggiraph::girafeOutput("closure_map", width = "100%", height = "700px")
+```
+
+```{r}
+##| context: server # add if using shiny option
+#| echo: true
+#| message: false
+#| warning: false
+
+# Running script to draw and print the interactive map
+# source(here::here("scripts", "map_testi.R"), local = TRUE)
+
+#output$closure_map <- ggiraph::renderGirafe({
+#  make_interactive_map(show_fill = isTRUE(input$show_fill))
+#})
+  
+source(here::here("scripts", "interactive_map.R"), echo = FALSE)
+
+print(interactive_plot)
+
 ```
 
 ## Municipality level descriptive statistics
@@ -115,11 +160,12 @@ The system chart visualizing the patient pathways, structure and distribution of
 # Create and save the graph
 source(here::here("scripts", "system_chart.R"), local = knitr::knit_global())
 
-# Include chart as static image
-knitr::include_graphics(
-  normalizePath(here::here("output", tag, "system_graph.png"), winslash = "/"))
+print(system_chart)
+# Include chart as static image (if using gfm format)
+#knitr::include_graphics(
+#  normalizePath(here::here("output", tag, "system_graph.png"), winslash = "/"))
 
-#knitr::include_graphics(here::here("output", tag, "system_graph.png"))
+knitr::include_graphics(here::here("output", tag, "system_graph.png"))
 
 
 

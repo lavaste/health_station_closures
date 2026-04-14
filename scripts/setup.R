@@ -20,6 +20,7 @@ rm(list=ls())
   library(tidyverse)
   library(dplyr)
   library(tidyr)
+  library(knitr)
 # Data table
   library(data.table)
 # Koordinaattimuunnokset
@@ -39,6 +40,11 @@ rm(list=ls())
   library(foreign)
 # Map themes
   library(ggthemes)
+# Interactive map
+  library(ggiraph)
+  library(shiny)
+  library(sf)
+  library(plotly)
 # Color palettes
   library(viridis)
   library(RColorBrewer)
@@ -50,7 +56,8 @@ rm(list=ls())
   library(kableExtra)
   library(tibble)
   library(smd)
-  library(stargazer)    
+  library(stargazer)  
+  library(DT)
 
 # Set seed
 set.seed(12345)
