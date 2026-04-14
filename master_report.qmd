@@ -1,7 +1,7 @@
 ---
 title: "The Effects of Primary Care Clinic Closures: How Older People's Geographical Distance to Care Affects Their Health and Service Use?"
 author: Tuukka Holster, Mika Kortelainen, Marja-Lisa Laukkonen, Konsta Lavaste, Kaisa Palo, Markku Satokangas, Tiina Hetemaa & Vuokko Heikinheimo
-format: html # test, change back to gfm if needed
+format: gfm 
 #server: shiny # possibility for interactive map 
 editor: visual
 ---
@@ -40,7 +40,8 @@ Quatro documentation shows identified closures as a list with station name, muni
 # Run script
   source(here::here("scripts", "identifying_closed_stations.R"), echo = FALSE)
 
-  DT::datatable(exits_short)
+# Toimiim vain html -formaatilla -> GitHub Pages jotta saa näkymään muunkin kuin lähdekoodin repossa
+# DT::datatable(exits_short)
 ```
 
 ## Maps
@@ -85,7 +86,9 @@ All closed stations are marked with yellow squares, new clinics marked with purp
 
 # Running script to draw the maps
   source(here::here("scripts", "map_all_stations.R"), echo = FALSE)
-
+  
+  all_clinics_graph
+  new_stations_graph
 ```
 
 The pfd/png images of the maps are saved in output-folder.
@@ -124,7 +127,7 @@ The pfd/png images of the maps are saved in output-folder.
   
 source(here::here("scripts", "interactive_map.R"), echo = FALSE)
 
-print(interactive_plot)
+# print(interactive_plot)
 
 ```
 
@@ -156,11 +159,11 @@ The system chart visualizing the patient pathways, structure and distribution of
 #| echo: false
 #| message: false
 #| warning: false
+#| output: true
 
 # Create and save the graph
 source(here::here("scripts", "system_chart.R"), local = knitr::knit_global())
 
-print(system_chart)
 # Include chart as static image (if using gfm format)
 #knitr::include_graphics(
 #  normalizePath(here::here("output", tag, "system_graph.png"), winslash = "/"))

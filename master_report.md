@@ -21,14 +21,26 @@ Running data to identify health station closures and new station
 entries. The data is collected from public sources using Internet
 Archive WayBack Machine (DOI will be added).
 
+Quatro documentation shows identified closures as a list with station
+name, municipality, and closure year. Closure year is defined as t if
+the station was in the data at t-1 but not in t.
+
 ``` r
 # Run script
   source(here::here("scripts", "identifying_closed_stations.R"), echo = FALSE)
+
+# Toimiim vain html -formaatilla -> GitHub Pages jotta saa näkymään muunkin kuin lähdekoodin repossa
+# DT::datatable(exits_short)
 ```
 
 ## Maps
 
-Drawing a map of closed clinics with population density.
+This section runs the codes that draw maps of health stations in
+Finland. The three maps include stations that i) closed ii) opened and
+iii) all stations are saved as pdf/png files to output-folder. An
+interactive map is then printed for the Quatro document.
+
+*Drawing a map of closed clinics with population density:*
 
 Closed health stations are marked with red squares. Population density
 is calculated by dividing the population of the postal code area by the
@@ -40,13 +52,15 @@ regardless of their actual density.
 ``` r
 # Running script to draw the maps
   source(here::here("scripts", "map_closures.R"), echo = FALSE)
+  
+  exits_graph
 ```
 
 <img src="master_report_files/figure-commonmark/map-1.png"
 data-fig-align="center" />
 
-Drawing map of stations closed and opened during the study period
-relative to other stations that did not close.
+*Drawing map of stations closed and opened during the study period
+relative to other stations that did not close:*
 
 All closed stations are marked with yellow squares, new clinics marked
 with purple squares, and others that remain (mostly) in the same
@@ -55,13 +69,41 @@ location are marked with green squares.
 ``` r
 # Running script to draw the maps
   source(here::here("scripts", "map_all_stations.R"), echo = FALSE)
+  
+  all_clinics_graph
 ```
 
 <img src="master_report_files/figure-commonmark/map2-1.png"
 data-fig-align="center" />
 
+``` r
+  new_stations_graph
+```
+
 <img src="master_report_files/figure-commonmark/map2-2.png"
 data-fig-align="center" />
+
+The pfd/png images of the maps are saved in output-folder.
+
+*Drawing interactive map for the GitHub documentation: TBA*
+
+``` r
+##| context: server # add if using shiny option
+#| echo: true
+#| message: false
+#| warning: false
+
+# Running script to draw and print the interactive map
+# source(here::here("scripts", "map_testi.R"), local = TRUE)
+
+#output$closure_map <- ggiraph::renderGirafe({
+#  make_interactive_map(show_fill = isTRUE(input$show_fill))
+#})
+  
+source(here::here("scripts", "interactive_map.R"), echo = FALSE)
+
+# print(interactive_plot)
+```
 
 ## Municipality level descriptive statistics
 
@@ -103,4 +145,21 @@ service use of different subsystems among people aged over 64 years are
 from THL Sampo -datacubes
 ([Sampo](https://sampo.thl.fi/pivot/prod/fi/hilmokokonaisuus/kuutio01/fact_hilmokok_kuutio01?row=palvelu-49937&row=palvelusektori-918725&column=ikaluokka-109987&filter=measure-87578&filter=aika-660839)).
 
-![](output/2026-04-02-kaisapalo/system_graph.png)
+
+    Attaching package: 'magrittr'
+
+    The following object is masked from 'package:ggmap':
+
+        inset
+
+    The following object is masked from 'package:purrr':
+
+        set_names
+
+    The following object is masked from 'package:tidyr':
+
+        extract
+
+    Linking to librsvg 2.61.0
+
+![](output/2026-04-14-kaisapalo/system_graph.png)

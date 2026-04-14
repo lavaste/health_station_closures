@@ -63,4 +63,4 @@ interactive_plot <- girafe_options(interactive_plot,
     opts_zoom(max = 8, default_on = TRUE)
   )
 
-#htmltools::save_html(interactive_plot, here::here("output", tag, "interactive_map.html"))
+htmltools::save_html(interactive_plot, here::here("output", tag, "interactive_map.html"))
