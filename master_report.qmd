@@ -90,7 +90,7 @@ All closed stations are marked with yellow squares, new clinics marked with purp
 
 The pfd/png images of the maps are saved in output-folder.
 
-*Drawing interactive map for the GitHub documentation:*
+*Drawing interactive map for the GitHub documentation: TBA*
 
 ```{r}
 #| echo: false
