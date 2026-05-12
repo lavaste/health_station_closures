@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,6 +10,9 @@
 
 <title>The Effects of Primary Care Clinic Closures: How Older People’s Geographical Distance to Care Affects Their Health and Service Use?</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -62,25 +65,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="master_report_files/libs/clipboard/clipboard.min.js"></script>
 <script src="master_report_files/libs/quarto-html/quarto.js" type="module"></script>
 <script src="master_report_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="master_report_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="master_report_files/libs/quarto-html/popper.min.js"></script>
 <script src="master_report_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="master_report_files/libs/quarto-html/anchor.min.js"></script>
 <link href="master_report_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="master_report_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="master_report_files/libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="master_report_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="master_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="master_report_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="master_report_files/libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
-<script src="master_report_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<link href="master_report_files/libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="master_report_files/libs/datatables-binding-0.34.0/datatables.js"></script>
-<script src="master_report_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="master_report_files/libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-<link href="master_report_files/libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
-<script src="master_report_files/libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
-<link href="master_report_files/libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
-<script src="master_report_files/libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+<link href="master_report_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -136,7 +128,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run script</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"scripts"</span>, <span class="st">"identifying_closed_stations.R"</span>), <span class="at">echo =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  DT<span class="sc">::</span><span class="fu">datatable</span>(exits_short)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Toimiim vain html -formaatilla -&gt; GitHub Pages jotta saa näkymään muunkin kuin lähdekoodin repossa</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a> DT<span class="sc">::</span><span class="fu">datatable</span>(exits_short)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="datatables html-widget html-fill-item" id="htmlwidget-8d32cfd9db97395c4a5f" style="width:100%;height:auto;"></div>
 <script type="application/json" data-for="htmlwidget-8d32cfd9db97395c4a5f">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60"],["Artjärven terveysasema","Askaisten terveystalo","Atalan terveysasema","Björköbyn terveysasema","Bosundin vastaanotto","Eurakosken terveysasema","Herttoniemen terveysasema","Hietalahden terveysasema","Holmin vastaanotto","Huutoniemen terveysasema","Höyhtyän terveysasema","Kaijonharjun terveysasema","Kallion terveysasema","Karihaaran terveysasema","Keski-Porin terveysasema","Keskustan lähiklinikka 1 (Lahti)","Keskustan terveysasema (Oulu)","Konginkankaan terveysasema","Korkeavahan terveysasema","Kulmalahden terveysasema","Lammalan palvelupiste","Lehtikankaan terveysasema","Liedon aseman terveysasema","Liljendalin terveystalo","Mansikkalan hyvinvointiasema","Matinkylän terveysasema","Myllytien terveysasema","Mäntynummen terveysasema","Naarajärven terveysasema","Narvan terveysasema","Oma Lääkärisi Puolarmetsä","Paavolan terveysasema","Pankalammen pääterveysasema","Peruspalvelukeskus Virastotalo","Piippolan terveyskeskus","Riihimäen terveysasema","Roution terveysasema","Ruotsinpyhtään terveystalo","Ryttylän terveysasema","Sairaalakadun terveysasema","Sepän terveysasema","Siuron terveysasema","Sumiaisten terveysasema","Suolahden terveysasema","Syväkankaan terveysasema","Särkimön terveysasema","Taalintehtaan terveysasema","Uimaharjun terveysasema","Uotilan terveysasema","Vaajakosken terveysasema","Vallilan terveysasema","Vanhankylänniemen terveysasema","Veikkaalan terveysasema","Viinijärven terveysasema","Virkkalan terveysasema","Ylämaan terveysasema","Ylämyllyn terveysasema","Ähtävän terveysasema","Ähtävän-Kolpin terveysasema","Övermalaxin terveysasema"],["Orimattila","Masku","Tampere","Mustasaari","Luoto","Eura","Helsinki","Vaasa","Luoto","Vaasa","Oulu","Oulu","Helsinki","Kemi","Pori","Lahti","Oulu","Äänekoski","Forssa","Kangasala","Kemiönsaari","Kajaani","Lieto","Loviisa","Imatra","Espoo","Järvenpää","Lohja","Pieksämäki","Vesilahti","Espoo","Hyvinkää","Mikkeli","Kankaanpää","Siikalatva","Riihimäki","Lohja","Loviisa","Hausjärvi","Rovaniemi","Oulu","Nokia","Äänekoski","Äänekoski","Kemi","Vöyri","Kemiönsaari","Joensuu","Rauma","Jyväskylä","Helsinki","Järvenpää","Mustasaari","Liperi","Lohja","Lappeenranta","Liperi","Pedersören kunta","Pedersören kunta","Maalahti"],[2019,2016,2017,2015,2017,2016,2018,2016,2017,2015,2015,2019,2018,2014,2016,2018,2015,2014,2016,2016,2018,2018,2016,2015,2018,2019,2017,2017,2015,2016,2016,2019,2017,2016,2014,2017,2015,2016,2016,2018,2016,2017,2014,2014,2014,2019,2019,2018,2015,2019,2018,2017,2016,2019,2017,2014,2017,2016,2019,2016]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>station<\/th>\n      <th>municipality<\/th>\n      <th>closure_year<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"station","targets":1},{"name":"municipality","targets":2},{"name":"closure_year","targets":3}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
@@ -152,39 +145,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Running script to draw the maps</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"scripts"</span>, <span class="st">"map_closures.R"</span>), <span class="at">echo =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  exits_graph</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="master_report_files/figure-html/map-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
-</figure>
-</div>
-</div>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># exits_graph</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><em>Drawing map of stations closed and opened during the study period relative to other stations that did not close:</em></p>
 <p>All closed stations are marked with yellow squares, new clinics marked with purple squares, and others that remain (mostly) in the same location are marked with green squares.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Running script to draw the maps</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"scripts"</span>, <span class="st">"map_all_stations.R"</span>), <span class="at">echo =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"scripts"</span>, <span class="st">"map_all_stations.R"</span>), <span class="at">echo =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  all_clinics_graph</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#  new_stations_graph</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The pfd/png images of the maps are saved in output-folder.</p>
-<p><em>Drawing interactive map for the GitHub documentation:</em></p>
+<p><em>Drawing interactive map for the GitHub documentation: TBA</em></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">##| context: server # add if using shiny option</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Running script to draw and print the interactive map</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># source(here::here("scripts", "map_testi.R"), local = TRUE)</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#output$closure_map &lt;- ggiraph::renderGirafe({</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">#  make_interactive_map(show_fill = isTRUE(input$show_fill))</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#})</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"scripts"</span>, <span class="st">"interactive_map.R"</span>), <span class="at">echo =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(interactive_plot)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="form-group shiny-input-container">
+<div class="checkbox">
+<label>
+<input id="show_fill" type="checkbox" class="shiny-input-checkbox" checked="checked">
+<span>Show population density background</span>
+</label>
+</div>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="form-group shiny-input-container">
+<div class="checkbox">
+<label>
+<input id="show_other_stations" type="checkbox" class="shiny-input-checkbox" checked="checked">
+<span>Show other stations</span>
+</label>
+</div>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="form-group shiny-input-container">
+<div class="checkbox">
+<label>
+<input id="show_new_stations" type="checkbox" class="shiny-input-checkbox" checked="checked">
+<span>Show new clinics</span>
+</label>
+</div>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="form-group shiny-input-container">
+<div class="checkbox">
+<label>
+<input id="show_closed_stations" type="checkbox" class="shiny-input-checkbox" checked="checked">
+<span>Show closed clinics</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="girafe html-widget html-widget-output shiny-report-size html-fill-item" id="closure_map" style="width:100%;height:700px;"></div>
+</div>
 </div>
 </section>
 <section id="municipality-level-descriptive-statistics" class="level2">
@@ -192,8 +211,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Descriptive statistics at municipality level. Treatment (&gt;1 closure in municipality) and control (no closures) group mean, standard deviation, and relative difference.</p>
 <p>Source: THL (<a href="https://sotkanet.fi/sotkanet/fi/index" class="uri">https://sotkanet.fi/sotkanet/fi/index</a>)</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Running script to make table</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"scripts"</span>, <span class="st">"mun_level_summary_table.R"</span>), <span class="at">echo =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Running script to make table</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"scripts"</span>, <span class="st">"mun_level_summary_table.R"</span>), <span class="at">echo =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 ==================================================================================================
@@ -218,14 +237,101 @@ Municipalities                   41                      267
 <h2 class="anchored" data-anchor-id="finnish-healthcare-system-chart-patient-pathways">Finnish healthcare system chart: patient pathways</h2>
 <p>The system chart visualizing the patient pathways, structure and distribution of visits among the elderly population. Primary care is provided independently by nurses, GPs, and specialists. Specialised care is typically provided by specialists assisted by nurses. Shares of the service use of different subsystems among people aged over 64 years are from THL Sampo -datacubes (<a href="https://sampo.thl.fi/pivot/prod/fi/hilmokokonaisuus/kuutio01/fact_hilmokok_kuutio01?row=palvelu-49937&amp;row=palvelusektori-918725&amp;column=ikaluokka-109987&amp;filter=measure-87578&amp;filter=aika-660839">Sampo</a>).</p>
 <div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'magrittr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:ggmap':
+
+    inset</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:purrr':
+
+    set_names</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:tidyr':
+
+    extract</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Linking to librsvg 2.61.0</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="output/2026-04-14-kaisapalo/system_graph.png" class="img-fluid figure-img" width="1000"></p>
+<p><img src="output/2026-05-11-kaisapalo/system_graph.png" class="img-fluid figure-img" width="1000"></p>
 </figure>
 </div>
 </div>
 </div>
+<p>
+<script type="application/shiny-prerendered" data-context="server">
+source(here::here("scripts", "map_testi.R"), local = TRUE)
+
+output$closure_map <- ggiraph::renderGirafe({
+  make_interactive_map(
+    show_fill = isTRUE(input$show_fill),
+    show_other_stations = isTRUE(input$show_other_stations),
+    show_new_stations = isTRUE(input$show_new_stations),
+    show_closed_stations = isTRUE(input$show_closed_stations)
+  )
+})
+
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server-extras">
+ojs_define <- function(..., .session = shiny::getDefaultReactiveDomain()) {
+  quos <- rlang::enquos(...)
+  vars <- rlang::list2(...)
+  nm <- names(vars)
+  if (is.null(nm)) {
+    nm <- rep_len("", length(vars))
+  }
+  mapply(
+    function(q, nm, val) {
+      # Infer name, if possible
+      if (nm == "") {
+        tryCatch(
+          {
+            nm <- rlang::as_name(q)
+          },
+          error = function(e) {
+            code <- paste(collapse = "\n", deparse(rlang::f_rhs(q)))
+            stop(
+              "ojs_define() could not create a name for the argument: ",
+              code
+            )
+          }
+        )
+      }
+      .session$output[[nm]] <- val
+      outputOptions(.session$output, nm, suspendWhenHidden = FALSE)
+      .session$sendCustomMessage("ojs-export", list(name = nm))
+      NULL
+    },
+    quos,
+    nm,
+    vars,
+    SIMPLIFY = FALSE,
+    USE.NAMES = FALSE
+  )
+  invisible()
+}
+</script>
+</p>
+<!--html_preserve-->
+<script type="application/shiny-prerendered" data-context="dependencies">
+{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmltools-fill"]},{"type":"character","attributes":{},"value":["0.5.9"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["fill"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["fill.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmltools"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.5.9"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets"]},{"type":"character","attributes":{},"value":["1.6.4"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["www"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmlwidgets.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmlwidgets"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["1.6.4"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["datatables-css"]},{"type":"character","attributes":{},"value":["0.0.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets/css"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["datatables-crosstalk.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["DT"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.34.0"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["datatables-binding"]},{"type":"character","attributes":{},"value":["0.34.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["datatables.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["DT"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["0.34.0"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["jquery"]},{"type":"character","attributes":{},"value":["3.6.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/3.6.0"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquery-3.6.0.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquerylib"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.1.4"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["dt-core"]},{"type":"character","attributes":{},"value":["1.13.6"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets/lib/datatables"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["js/jquery.dataTables.min.js"]},{"type":"character","attributes":{},"value":["css/jquery.dataTables.min.css","css/jquery.dataTables.extra.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["DT"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["0.34.0"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["crosstalk"]},{"type":"character","attributes":{},"value":["1.2.2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["www"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["js/crosstalk.min.js"]},{"type":"character","attributes":{},"value":["css/crosstalk.min.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["crosstalk"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["1.2.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmltools-fill"]},{"type":"character","attributes":{},"value":["0.5.9"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["fill"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["fill.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmltools"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.5.9"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets"]},{"type":"character","attributes":{},"value":["1.6.4"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["www"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmlwidgets.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmlwidgets"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["1.6.4"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["ggiraphjs"]},{"type":"character","attributes":{},"value":["0.9.4"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["girafe.js"]},{"type":"character","attributes":{},"value":["girafe.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["ggiraph"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.9.6"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["girafe-binding"]},{"type":"character","attributes":{},"value":["0.9.6"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["girafe.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["ggiraph"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["0.9.6"]}]}]}
+</script>
+<!--/html_preserve-->
+<!--html_preserve-->
+<script type="application/shiny-prerendered" data-context="execution_dependencies">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140]}},"value":[{"type":"character","attributes":{},"value":["backports","base","bibtex","bit","bit64","bitops","bslib","cachem","cellranger","checkmate","class","classInt","cli","compiler","crayon","crosstalk","curl","data.table","datasets","DBI","DiagrammeR","DiagrammeRsvg","dichromat","digest","dplyr","DT","e1071","evaluate","farver","fastmap","fontBitstreamVera","fontLiberation","fontquiver","forcats","foreign","frictionless","gdtools","generics","geofi","ggiraph","ggmap","ggplot2","ggthemes","glue","gmapsdistance","graphics","grDevices","grid","gridExtra","gtable","haven","here","hms","htmltools","htmlwidgets","httpcache","httpuv","httr","httr2","janitor","jpeg","jquerylib","jsonlite","kableExtra","KernSmooth","knitr","labeling","later","lattice","lazyeval","lifecycle","lubridate","magrittr","MASS","methods","mime","modelsummary","otel","parallel","pillar","pkgconfig","plotly","plyr","png","promises","proxy","purrr","pxweb","R6","ragg","rappdirs","RColorBrewer","Rcpp","readr","readxl","RefManageR","rlang","rmarkdown","rprojroot","rstudioapi","rsvg","S7","sass","scales","sf","shiny","smd","snakecase","sotkanet","sp","stargazer","stats","stringi","stringr","svglite","systemfonts","tables","textshaping","tibble","tidygeocoder","tidyr","tidyselect","tidyverse","timechange","tools","tzdb","units","utils","V8","vctrs","viridis","viridisLite","visNetwork","vroom","withr","writexl","xfun","xml2","xtable","yaml"]},{"type":"character","attributes":{},"value":["1.5.0","4.5.3","0.5.2","4.6.0","4.6.0-1","1.0-9","0.10.0","1.1.0","1.1.0","2.3.4","7.3-23","0.4-11","3.6.5","4.5.3","1.5.3","1.2.2","7.0.0","1.18.2.1","4.5.3","1.3.0","1.0.11","0.1","2.0-0.1","0.6.39","1.2.0","0.34.0","1.7-17","1.0.5","2.1.2","1.2.0","0.1.1","0.1.0","0.2.1","1.0.1","0.8-91","1.2.1","0.5.0","0.1.4","1.2.0","0.9.6","4.0.2","4.0.2","5.2.0","1.8.0","4.0.5","4.5.3","4.5.3","4.5.3","2.3","0.3.6","2.5.5","1.0.2","1.1.4","0.5.9","1.6.4","1.2.0","1.6.17","1.4.8","1.2.2","2.2.1","0.1-11","0.1.4","2.0.0","1.4.0","2.23-26","1.51","0.4.3","1.4.8","0.22-9","0.2.3","1.0.5","1.9.5","2.0.4","7.3-65","4.5.3","0.13","2.6.0","0.2.0","4.5.3","1.11.1","2.0.3","4.12.0","1.8.9","0.1-9","1.5.0","0.4-29","1.2.1","0.17.0","2.6.1","1.5.2","0.3.4","1.1-3","1.1.1","2.2.0","1.4.5","1.4.0","1.1.7","2.30","2.1.1","0.18.0","2.7.0","0.2.1","0.4.10","1.4.0","1.1-0","1.13.0","0.8.0","0.11.1","0.10.1","2.2-1","5.2.3","4.5.3","1.8.7","1.6.0","2.2.2","1.3.2","0.9.33","1.0.5","3.3.1","1.0.6","1.3.2","1.2.1","2.0.0","0.4.0","4.5.3","0.5.0","1.0-1","4.5.3","8.0.1","0.7.2","0.6.5","0.4.3","2.1.4","1.7.0","3.0.2","1.5.4","0.57","1.5.2","1.8-8","2.3.12"]}]}]}
+</script>
+<!--/html_preserve-->
 </section>
 </section>
 

@@ -42,6 +42,7 @@ rm(list=ls())
   library(ggthemes)
 # Interactive map
   library(ggiraph)
+  library(ggplot2)
   library(shiny)
   library(sf)
   library(plotly)

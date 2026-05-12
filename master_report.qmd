@@ -1,7 +1,7 @@
 ---
 title: "The Effects of Primary Care Clinic Closures: How Older People's Geographical Distance to Care Affects Their Health and Service Use?"
 author: Tuukka Holster, Mika Kortelainen, Marja-Lisa Laukkonen, Konsta Lavaste, Kaisa Palo, Markku Satokangas, Tiina Hetemaa & Vuokko Heikinheimo
-format: gfm 
+format: html
 #server: shiny # possibility for interactive map 
 editor: visual
 ---
@@ -41,7 +41,7 @@ Quatro documentation shows identified closures as a list with station name, muni
   source(here::here("scripts", "identifying_closed_stations.R"), echo = FALSE)
 
 # Toimiim vain html -formaatilla -> GitHub Pages jotta saa näkymään muunkin kuin lähdekoodin repossa
-# DT::datatable(exits_short)
+ DT::datatable(exits_short)
 ```
 
 ## Maps
@@ -65,7 +65,7 @@ Closed health stations are marked with red squares. Population density is calcul
 # Running script to draw the maps
   source(here::here("scripts", "map_closures.R"), echo = FALSE)
   
-  exits_graph
+# exits_graph
 ```
 
 *Drawing map of stations closed and opened during the study period relative to other stations that did not close:*
@@ -87,8 +87,8 @@ All closed stations are marked with yellow squares, new clinics marked with purp
 # Running script to draw the maps
   source(here::here("scripts", "map_all_stations.R"), echo = FALSE)
   
-  all_clinics_graph
-  new_stations_graph
+#  all_clinics_graph
+#  new_stations_graph
 ```
 
 The pfd/png images of the maps are saved in output-folder.
@@ -96,38 +96,63 @@ The pfd/png images of the maps are saved in output-folder.
 *Drawing interactive map for the GitHub documentation: TBA*
 
 ```{r}
-#| echo: false
+#| label: test_map1
+#| eval: false
+#| include: false
 
-#checkboxInput(
-#  inputId = "show_fill",
-#  label = "Show population density background",
-#  value = TRUE
-#)
+checkboxInput(
+  inputId = "show_fill",
+  label = "Show population density background",
+  value = TRUE
+)
+
+checkboxInput(
+  inputId = "show_other_stations",
+  label = "Show other stations",
+  value = TRUE
+)
+
+checkboxInput(
+  inputId = "show_new_stations",
+  label = "Show new clinics",
+  value = TRUE
+)
+
+checkboxInput(
+  inputId = "show_closed_stations",
+  label = "Show closed clinics",
+  value = TRUE
+)
 ```
 
 ```{r}
+#| label: test_map2
+#| echo: false
+#| eval: false
+#| include: false
+
+ ggiraph::girafeOutput("closure_map", width = "100%", height = "700px")
+```
+
+```{r}
+##| context: server 
 #| label: map_interactive
 #| echo: false
-
-#ggiraph::girafeOutput("closure_map", width = "100%", height = "700px")
-```
-
-```{r}
-##| context: server # add if using shiny option
-#| echo: true
 #| message: false
 #| warning: false
 
-# Running script to draw and print the interactive map
 # source(here::here("scripts", "map_testi.R"), local = TRUE)
+# output$closure_map <- ggiraph::renderGirafe({
+#  make_interactive_map(
+#    show_fill = isTRUE(input$show_fill),
+#    show_other_stations = isTRUE(input$show_other_stations),
+#    show_new_stations = isTRUE(input$show_new_stations),
+#    show_closed_stations = isTRUE(input$show_closed_stations)
+#  )
+# })
 
-#output$closure_map <- ggiraph::renderGirafe({
-#  make_interactive_map(show_fill = isTRUE(input$show_fill))
-#})
-  
-source(here::here("scripts", "interactive_map.R"), echo = FALSE)
-
-# print(interactive_plot)
+source(here::here("scripts", "interactive_map.R"))
+interactive_plot
 
 ```
 

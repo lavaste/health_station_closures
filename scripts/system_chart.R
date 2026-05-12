@@ -8,6 +8,8 @@ thl_hilmo_base_url <- "https://sampo.thl.fi/pivot/prod/fi/hilmokokonaisuus/kuuti
 thl_measure_filter <- "filter=measure-87578&filter=aika-660839&"
 thl_age_older_filter <- "column=ikaluokka-110072&"
 
+#----------Create functions------------------------------
+
 read_thl_hilmo_table <- function(query) {
   readr::read_delim(
     file = paste0(thl_hilmo_base_url, ".csv?", query),
@@ -24,7 +26,6 @@ read_thl_hilmo_table <- function(query) {
         locale = readr::locale(decimal_mark = ",", grouping_mark = " ")
       ))}
 
-#----------Create functions------------------------------
 sum_selected_visits <- function(data, services, sector = NULL) {
   filtered_data <- data |>
     dplyr::filter(palvelu %in% services)
@@ -87,7 +88,7 @@ selected_specialised_services <- c(
 #---------------------------------------------------
 # Calculations: 
 #---------------------------------------------------
-# Pth: prosenttiosuudet -> pth käynneistä x% ei jatka esh (tälle oma boxi kuvaan?)
+# Pth: prosenttiosuudet -> pth käynneistä x% ei jatka esh (tälle oma boxi kuvaan)
 # Esh kerroksessa 3 boxia (yht 100%) 
 # - Tässä ainoa epäkohta se, että private esh osa ei tule pth kautta
 #  -> % osuus on väärä, mutta ei varmasti iso osuus? selitteeseen että % osuudet on pth käynneistä?
@@ -256,7 +257,7 @@ no_specialised_edge_label <- paste0(
 #--------------------------------------------------
 
 # Finnish Patient Pathway 2013–2019
-# Three tiers: public, private, and occupational primary care
+# Two tiers: public, private, and occupational primary care
 # + public and private specialised care
 # Uses DiagrammeR (Graphviz DOT engine)
 
@@ -530,7 +531,7 @@ system_chart %>%
   rsvg_png(file = here::here("output", tag, "system_graph.png"), 
            width = 2000)   # higher width = better resolution
 
-# Empty values
+# Empty saved values
 rm(list = c(ls(pattern = "^thl_"), ls(pattern = "^selected_"), ls(pattern = "_visits$"), ls(pattern = "_pct$"), 
             ls(pattern = "_label$"), ls(pattern = "^secondary_"), "system_chart_share_data", "specialised_care_summary"))
 
